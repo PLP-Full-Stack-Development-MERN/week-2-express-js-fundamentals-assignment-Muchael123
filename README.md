@@ -1,93 +1,76 @@
-**Week 2: Express.js Fundamentals Assignment**
+# Express.js Project - Week 2 Assignment
 
-**Objective:**
+This project demonstrates the fundamentals of Express.js, including routing, middleware, controllers, and RESTful API creation. It includes a simple API for managing users and products with basic CRUD operations.
 
-- Apply Express.js concepts learned throughout the week.
-- Develop hands-on experience with creating routes, middleware, and API endpoints.
-- Understand and implement RESTful APIs.
+## Table of Contents
+1. [Project Setup](#project-setup)
+2. [File Structure](#file-structure)
+3. [Environment Variables](#environment-variables)
+4. [API Endpoints](#api-endpoints)
 
-**Instructions:**
 
-1. **Setup Express.js Project:**
+---
 
-   - Install Node.js using NVM.
-   - Create a new project folder named `express-assignment`.
-   - Initialize a Node.js project using:
-     ```sh
-     npm init -y
-     ```
-   - Install necessary dependencies:
-     ```sh
-     npm install express dotenv
-     ```
+## Project Setup
 
-2. **Project Structure:**
+### 1. **Install Node.js Using NVM**
+Make sure you have [NVM](https://github.com/nvm-sh/nvm) (Node Version Manager) installed on your system. If you don't have it yet, follow the installation instructions on the NVM GitHub page.
 
-   - Organize your project files with a clear folder structure:
-     ```
-     express-assignment/
-     │-- routes/
-     │    ├── userRoutes.js
-     │    ├── productRoutes.js
-     │-- middleware/
-     │    ├── logger.js
-     │-- controllers/
-     │    ├── userController.js
-     │    ├── productController.js
-     │-- index.js
-     │-- package.json
-     │-- README.md
-     │-- .env
-     ```
+Once installed, use NVM to install Node.js:
+```bash
+nvm install node
+```
+### 2. Clone the Repository
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/your-username/express-assignment.git
+cd express-assignment
+```
 
-3. **Create Routes:**
+### 3. Install dependancies
+```bash
+   npm i
+```
+### 4. Run project
+   To run the project use:
+```bash
+   npm run dev
+```
+   or go to the `package.json` and change the `"dev"` to your liking
+   ```json
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  ```
 
-   - Create `userRoutes.js` and `productRoutes.js` inside the `routes/` folder.
-   - Implement RESTful routes for users and products (GET, POST, PUT, DELETE).
-   - Ensure proper usage of route parameters and query strings.
+## File Structure
+```bash
+express-assignment/
+│-- controllers/
+│    ├── userController.js      # Controller for handling user requests
+│    ├── productController.js   # Controller for handling product requests
+│-- middleware/
+│    ├── logger.js              # Custom middleware for logging requests
+│-- routes/
+│    ├── userRoutes.js          # Routes for managing users
+│    ├── productRoutes.js       # Routes for managing products
+│-- index.js                    # Main server file
+│-- .env                        # Environment variables
+│-- package.json                # Project dependencies and metadata
+│-- README.md                   # Project documentation
 
-4. **Implement Middleware:**
-
-   - Create a custom middleware function in `middleware/logger.js` to log request details (method, URL, timestamp).
-   - Apply middleware globally to all routes.
-
-5. **Develop Controllers:**
-
-   - Create controller functions in `controllers/userController.js` and `controllers/productController.js`.
-   - Implement business logic to handle requests and responses.
-
-6. **Environment Variables:**
-
-   - Use `dotenv` to manage environment variables.
-   - Define variables such as `PORT` in the `.env` file and access them inside the application.
-
-7. **Error Handling:**
-
-   - Implement a global error-handling middleware to catch and respond to errors gracefully.
-
-8. **Testing:**
-
-   - Run the server using:
-     ```sh
-     node index.js
-     ```
-   - Test API endpoints using Postman or cURL.
-   - Verify routes, middleware functionality, and error handling.
-
-9. **Documentation:**
-
-   - Add a `README.md` with instructions on setting up and running the project.
-   - Document available API endpoints with descriptions and example requests.
-
-10. **Submission:**
-
-   - Push your code to your GitHub repository.
-
-**Evaluation Criteria:**
-
-- Correct implementation of Express routes and middleware.
-- Proper error handling and logging.
-- Clean project structure and code organization.
-- Detailed documentation with clear instructions.
-- Successful testing of all endpoints.
-
+```
+## API EndPoints
+   ### User Routes:
+   - GET /api/users: Retrieve all users.
+   - GET /api/users/:id: Retrieve a user by ID.
+   - POST /api/users: Create a new user.
+   - PUT /api/users/:id: Update a user by ID.
+   - DELETE /api/users/:id: Delete a user by ID.
+   ### Product Routes:
+   - GET /api/products: Retrieve all products.
+   - GET /api/products/:id: Retrieve a product by ID.
+   - POST /api/products: Create a new product.
+   - PUT /api/products/:id: Update a product by ID.
+   - DELETE /api/products/:id: Delete a product by ID.
